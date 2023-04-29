@@ -4,7 +4,7 @@
 #include "primesUpTo1Mil.h"
 
 int main()
-{   
+{
     const int sieveSize = 1000000;
     int start = clock();
     int end;
@@ -12,7 +12,7 @@ int main()
     char isPrime[sieveSize+1];
     float timeLimit = 5.0;
     while(true)
-    {       
+    {
         wchar_t val = 0x01000100;
         wmemset((wchar_t *)isPrime,val,sieveSize/4);
         isPrime[sieveSize] = 0;
@@ -22,7 +22,7 @@ int main()
         isPrime[0] = 0;
         isPrime[1] = 0;
         isPrime[2] = 1;
-        
+
         int upperLimit = sqrt(sieveSize);
         for(int i=3; i<=upperLimit; i++)
         {
@@ -34,11 +34,11 @@ int main()
                     currNum = i*k;
                     if(currNum>sieveSize)
                         break;
-                    
+
                     isPrime[currNum] = 0;
                     k+=2;
                 }
-            }      
+            }
         }
         end = clock();
         passes++;
