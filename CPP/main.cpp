@@ -35,7 +35,7 @@ int main()
                     if(currNum>sieveSize)
                         break;
                     
-                    isPrime[currNum] = 0x00;
+                    isPrime[currNum] = 0;
                     k+=2;
                 }
             }      
