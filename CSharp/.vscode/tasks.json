@@ -7,9 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/PrimeSieve/PrimeSieve.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--configuration Release",
             ],
             "problemMatcher": "$msCompile"
         },
