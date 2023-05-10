@@ -1,0 +1,1 @@
+/Applications/MATLAB_R2022b_Beta.app/bin/matlab -nodesktop -r "cd $PWD; try, run ('birsey.m'); end; quit"

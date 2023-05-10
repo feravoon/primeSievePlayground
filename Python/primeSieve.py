@@ -27,7 +27,7 @@ while True:
 
 # Performance metrics
 print("---------------------------------------------------------")
-print("It ran  " + str(passes) + " passes in " + str((finish-start).total_seconds()) + " seconds.")
+print("It ran " + str(passes) + " passes in " + str((finish-start).total_seconds()) + " seconds.")
 print("Performance: " + str(passes/(finish-start).total_seconds()) + " passes/sec")
 
 

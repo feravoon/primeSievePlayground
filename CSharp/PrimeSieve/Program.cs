@@ -1,5 +1,4 @@
-﻿
-class PrimeSieve
+﻿class PrimeSieve
 {
     public static void Main()
     {
