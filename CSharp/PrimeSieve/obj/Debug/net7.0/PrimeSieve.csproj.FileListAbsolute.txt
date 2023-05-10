@@ -1,0 +1,15 @@
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.csproj.AssemblyReference.cache
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.AssemblyInfoInputs.cache
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.AssemblyInfo.cs
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.csproj.CoreCompileInputs.cache
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/bin/Debug/net7.0/PrimeSieve
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/bin/Debug/net7.0/PrimeSieve.deps.json
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/bin/Debug/net7.0/PrimeSieve.runtimeconfig.json
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/bin/Debug/net7.0/PrimeSieve.dll
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/bin/Debug/net7.0/PrimeSieve.pdb
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.dll
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/refint/PrimeSieve.dll
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.pdb
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/PrimeSieve.genruntimeconfig.cache
+/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/Debug/net7.0/ref/PrimeSieve.dll
