@@ -9,6 +9,17 @@ I try prime sieve algorithms in different programming languages.
 ## Results
 These result are from my MacBook Air M2
 
+| **Language** | **Passes in ~5 sec.** | **Passes/Sec** |
+|--------------|-----------------------|----------------|
+| CPP          | 11458                 | 2291.54        |
+| C#           | 10198                 | 2039.50        |
+| Go           | 9551                  | 1910.05        |
+| Java         | 6658                  | 1331.57        |
+| MATLAB       | 8159                  | 1631.64        |
+| PHP          | 190                   | 37.86          |
+| Python       | 9121                  | 1824.17        |
+| Rust         | 8503                  | 1700.47        |
+
     CPP/
     ----------------------------------------------------
     It ran 11458 passes in 5.00012 seconds.
