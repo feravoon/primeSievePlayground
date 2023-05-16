@@ -8,20 +8,25 @@
 
 void runSieve(int &passes, float &runtime)
 {
-    const int sieveSize = 1000000;
-    std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
-    std::chrono::system_clock::time_point end = std::chrono::system_clock::now();
-    std::chrono::duration<double> elapsed_seconds;
-    float timeLimit = 5.0;
-    bitArray<uint8_t> isPrime(sieveSize);
+    using namespace std::chrono;
+    const unsigned int sieveSize = 1000000;
+
+    system_clock::time_point start = system_clock::now();
+    system_clock::time_point end = system_clock::now();
+    duration<double> elapsed_seconds;
+    float timeLimit = 5.0f;
+
+    bitArray<unsigned char> isPrime(sieveSize);
+
     while(true)
     {
         isPrime.reset();
+        
         int k, currNum;
 
-        isPrime.setBit(0,0);
-        isPrime.setBit(1,0);
-        isPrime.setBit(2,1);
+        isPrime.clearBit(0); // Zero is not a prime
+        isPrime.clearBit(1); // One is not a prime
+        isPrime.setBit(2); // Two is a prime
 
         int upperLimit = sqrt(sieveSize);
         for(int i=3; i<=upperLimit; i++)
@@ -35,28 +40,78 @@ void runSieve(int &passes, float &runtime)
                     if(currNum>sieveSize)
                         break;
 
-                    isPrime.setBit(currNum,0);
+                    isPrime.clearBit(currNum);
                     k+=2;
                 }
             }
         }
-        end = std::chrono::system_clock::now();
+        end = system_clock::now();
         passes++;
         elapsed_seconds = end-start;
         if(elapsed_seconds.count() > timeLimit)
             break;
     }
     runtime = elapsed_seconds.count();
+
+    // Code below is for checking if the algorithm calculated the result correctly
+    volatile unsigned int primeCount = 0;
+
+    for(int i=2; i<=sieveSize; i++)
+        if(isPrime.getBit(i))
+            primeCount++;
+
+    std::cout << "Prime count below " << sieveSize << ": " << primeCount << " | ";
+
+    if(primeCount==78498)
+        std::cout << "CORRECT!!!\n";
+    else
+        std::cout << "INCORRECT!!!\n";
+
     return;
 }
 
-int main()
-{   
-    const int N = 8; // number of threads;
-    int allPasses[N];
-    float allRuntimes[N];
-    memset(allPasses,0,N*sizeof(int));
-    memset(allRuntimes,0,N*sizeof(float));
+std::ostream& bold_on(std::ostream& os)
+{
+    return os << "\e[1m";
+}
+
+std::ostream& bold_off(std::ostream& os)
+{
+    return os << "\e[0m";
+}
+
+int main(int argc, char *argv[])
+{ 
+    int N = 8; // Default number of threads
+
+    // Input handling
+    if(argc>1)
+    {   
+        try
+        {
+            N = std::stoi(argv[1]);   
+            if(N<=0)
+                throw std::invalid_argument("Invalid number of threads");
+        }
+        catch(std::invalid_argument e)
+        {
+
+            if(!strcmp(e.what(),"Invalid number of threads"))
+                std::cout << bold_on << "\x1B[31mError:\033[0m" << bold_off << " Invalid number of threads: '" << argv[1] << "'. Enter a positive integer." << std::endl;
+            else if(!strcmp(argv[1],"-help"))
+            {
+                std::cout << "This program finds all the primes smaller than 1000000 and repeats itself as much as it can for 5 seconds." << std::endl;
+                std::cout << "Usage: main <number of threads>, if not given, <number of threads> defaults to 8." << std::endl;
+            }
+            else
+                std::cout << bold_on << "\x1B[31mError:\033[0m" << bold_off << " Unknown parameter '" << argv[1] << "'. Type 'main -help' for usage." << std::endl;
+            return 0;
+        }
+    }
+
+
+    int* allPasses = new int[N];
+    float* allRuntimes = new float[N];
     std::thread threads[N];
 
     for(int i=0; i<N; i++)
@@ -69,7 +124,7 @@ int main()
     std::cout << "|  Thread  | Passes | Run Time | " << std::endl;
     std::cout << "|----------|--------|----------| " << std::endl;
     for(int i=0; i<N; i++)
-        std::cout << "| Thread " << i << " | " << allPasses[i] << "  | " << printf("%.5f", allRuntimes[i]) << " |" << std::endl;
+        std::cout << "| Thread " << i << " |  " << allPasses[i] << "  | " << printf("%.5f", allRuntimes[i]) << " |" << std::endl;
 
     std::cout << "-------------------------------- " << std::endl;
     
@@ -79,5 +134,9 @@ int main()
         sumOfAllPasses += allPasses[i];
     
     std::cout << "Total Passes: " << sumOfAllPasses << std::endl;
+
+    delete[] allPasses;
+    delete[] allRuntimes;
+
     return 0;
 }

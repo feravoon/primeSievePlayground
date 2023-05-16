@@ -7,9 +7,11 @@ class bitArray
         T* packedArray;
 
     public:
-        unsigned int getBit(unsigned int ind);
-        void setBit(unsigned int ind, unsigned int val);
+        unsigned char getBit(unsigned int ind);
+        void setBit(unsigned int ind);
+        void clearBit(unsigned int ind);
         bitArray(unsigned int size);
+        ~bitArray();
         unsigned int getSize();
         void reset();
 };
