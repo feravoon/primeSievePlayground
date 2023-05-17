@@ -6,26 +6,28 @@ fn main() {
     let start: Instant = Instant::now();
     let mut end: Instant;
     let mut dur: Duration;
-    let mut passes: i32 = 0;
-    let mut is_prime = [false; SIEVE_SIZE+1];
+    let mut passes: usize = 0;
+    let mut is_prime: [u8; SIEVE_SIZE+1] = [0; SIEVE_SIZE+1];
+    //let mut is_prime: Box<[u8; SIEVE_SIZE+1]> = Box::new([0; SIEVE_SIZE+1]);
     let time_limit: f64 = 5.0;
     loop
     {
+        is_prime.fill(0);
         for i in (1..SIEVE_SIZE).step_by(2) {
-            is_prime[i] = true;
+            is_prime[i] = 1;
         }
         
         let mut k: usize;
         let mut curr_num: usize;
 
-        is_prime[0] = false;
-        is_prime[1] = false;
-        is_prime[2] = false;
+        is_prime[0] = 0;
+        is_prime[1] = 0;
+        is_prime[2] = 1;
 
         let upper_limit: usize = (SIEVE_SIZE as f32).sqrt() as usize;
         for i in 3..upper_limit
         {
-            if is_prime[i]
+            if is_prime[i]==1
             {
                 k = i;
                 loop
@@ -36,7 +38,7 @@ fn main() {
                         break;
                     }
                     
-                    is_prime[curr_num] = false;
+                    is_prime[curr_num] = 0;
                     k = k+2;
                 }
             }
