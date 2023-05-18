@@ -5,8 +5,7 @@ bitArray<T>::bitArray(unsigned int sizeArg) // Constructor
 {
     size = sizeArg;
     packedArray = new T[(size/8)/sizeof(T)+1];
-    unsigned char val = 0b10101010;
-    memset(packedArray,val,size/8 + sizeof(T));   
+    memset(packedArray,0b10101010,size/8 + sizeof(T));  
 }
 
 template <typename T>
@@ -18,8 +17,7 @@ bitArray<T>::~bitArray() // Destructor
 template <typename T>
 void bitArray<T>::reset()
 {
-    unsigned char val = 0b10101010;
-    memset(packedArray,val,size/8 + sizeof(T)); 
+    memset(packedArray,0b10101010,size/8 + sizeof(T)); 
 }
 
 template <typename T>
@@ -27,9 +25,8 @@ unsigned char bitArray<T>::getBit(unsigned int ind)
 {
     unsigned int packedIndex = ind/(sizeof(T)*8);
     unsigned int bitIndex = ind%(sizeof(T)*8);
-    T mask = 1 << bitIndex;
 
-    return (packedArray[packedIndex] & mask) >> bitIndex;
+    return (packedArray[packedIndex] >> bitIndex) & 1;
 }
 
 template <typename T>
@@ -39,7 +36,7 @@ void bitArray<T>::setBit(unsigned int ind)
     unsigned int bitIndex = ind%(sizeof(T)*8);
     T mask = 1 << bitIndex;
 
-    packedArray[packedIndex] = (packedArray[packedIndex] & ~mask) | mask;
+    packedArray[packedIndex] = packedArray[packedIndex] | mask;
 }
 
 template <typename T>

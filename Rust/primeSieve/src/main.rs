@@ -11,8 +11,8 @@ fn main() {
 
     loop
     {
-        let mut x: usize = 1;
-        let alternate = || {x = x+1; (x%2) as u8};   
+        let mut x: u8 = 1;
+        let alternate = || {x = x+1; x%2};   
         is_prime.fill_with(alternate);
         
         is_prime[1] = 0;

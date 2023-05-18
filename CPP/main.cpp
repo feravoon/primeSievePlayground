@@ -5,19 +5,23 @@
 
 int main()
 {
-    const int sieveSize = 1000000;
-    int start = clock();
-    int end;
-    int passes = 0;
-    char isPrime[sieveSize+1];
-    float timeLimit = 5.0;
+    using namespace std::chrono;
+    const unsigned int sieveSize = 1000000;
+
+    system_clock::time_point start = system_clock::now();
+    system_clock::time_point end = system_clock::now();
+    duration<double> elapsed_seconds;
+
+    unsigned int passes = 0;
+    unsigned char isPrime[sieveSize+1];
+    float timeLimit = 5.0f;
     while(true)
     {
         wchar_t val = 0x01000100;
         wmemset((wchar_t *)isPrime,val,sieveSize/4);
         isPrime[sieveSize] = 0;
 
-        int k, currNum;
+        int currNum;
 
         isPrime[0] = 0;
         isPrime[1] = 0;
@@ -28,26 +32,23 @@ int main()
         {
             if(isPrime[i])
             {
-                k = i;
-                while(true)
+                currNum = i*i;
+                while(currNum <= sieveSize)
                 {
-                    currNum = i*k;
-                    if(currNum>sieveSize)
-                        break;
-
                     isPrime[currNum] = 0;
-                    k+=2;
+                    currNum += i+i;
                 }
             }
         }
-        end = clock();
+        end = system_clock::now();
         passes++;
-        if(((float)end - start)/CLOCKS_PER_SEC > timeLimit)
+        elapsed_seconds = end-start;
+        if(elapsed_seconds.count() > timeLimit)
             break;
     }
     std::cout << "----------------------------------------------------" << std::endl;
-    std::cout << "It ran " << passes << " passes in " << ((float)end - start)/CLOCKS_PER_SEC << " seconds." << std::endl;
-    std::cout << "Performance: " << passes/(((float)end - start)/CLOCKS_PER_SEC) << " passes/sec" << std::endl;
+    std::cout << "It ran " << passes << " passes in " << elapsed_seconds.count() << " seconds." << std::endl;
+    std::cout << "Performance: " << passes/elapsed_seconds.count() << " passes/sec" << std::endl;
 
     // Code below is for checking if the algorithm calculated the result correctly
     int primeList[sieveSize+1];

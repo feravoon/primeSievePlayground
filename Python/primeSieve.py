@@ -4,7 +4,7 @@ from primesUpTo1Mil import *
 
 timeLimit = 5 # 5 seconds
 start = datetime.datetime.now() # starting time
-passes = 0;# pass counter
+passes = 0 # pass counter
 sieveSize = 1000000
 while True:
     isPrime = bytearray(b'\x00\x01')*(int(sieveSize/2)+1) # filling the array with alternating 1's and 0's (eliminating even numbers)
@@ -12,7 +12,7 @@ while True:
     isPrime[1] = 0 # set 1 as not a prime
     isPrime[2] = 1 # set 2 as a prime
 
-    upperLimit = round(math.sqrt(sieveSize)); # the for loop will run until the square root of the size of the sieve
+    upperLimit = round(math.sqrt(sieveSize))  # the for loop will run until the square root of the size of the sieve
     for i in range(3,upperLimit+1):
         if isPrime[i]:
             currNum = i*i # start elimination with the square of i
