@@ -9,63 +9,77 @@ I try prime sieve algorithms in different programming languages.
 ## Results
 These result are from my MacBook Air M2
 
-| **Language** | **Passes in ~5 sec.** | **Passes/Sec** |
-|--------------|-----------------------|----------------|
-| C++          | 11458                 | 2291.54        |
-| C#           | 10198                 | 2039.50        |
-| Go           | 9551                  | 1910.05        |
-| Java         | 6658                  | 1331.57        |
-| MATLAB       | 8159                  | 1631.64        |
-| PHP          | 190                   | 37.86          |
-| Python       | 9121                  | 1824.17        |
-| Rust         | 8503                  | 1700.47        |
+| **Language**    | **Passes in ~5 sec.** | **Passes/Sec** |
+|-----------------|-----------------------|----------------|
+| C++             | 15428                 | 3085.54        |
+| C++ (8 threads) | 56948                 | 11388.33       |
+| C#              | 9965                  | 1992.89        |
+| Go              | 9644                  | 1928.76        |
+| Java            | 5980                  | 1195.76        |
+| MATLAB          | 8159                  | 1631.64        |
+| PHP             | 296                   | 59.06          |
+| Python          | 9316                  | 1863.07        |
+| Rust            | 15624                 | 3124.69        |
 
     CPP/
     ----------------------------------------------------
-    It ran 11458 passes in 5.00012 seconds.
-    Performance: 2291.54 passes/sec
+    It ran 15428 passes in 5.0001 seconds.
+    Performance: 3085.54 passes/sec
+    And, it's working correctly!
+    ----------------------------------------------------
+
+    CPP_multiThread/
+    ----------------------------------------------------
+    It ran 56948 passes in 5.000557 seconds.
+    Performance: 11388.33 passes/sec
     And, it's working correctly!
     ----------------------------------------------------
 
     CSharp/
     ----------------------------------------------------
-    It ran 10198 passes in 5.00024 seconds.
-    Performance: 2039.502103899013 passes/sec
+    It ran 9965 passes in 5.000268 seconds.
+    Performance: 1992.8931809255023 passes/sec
+    And, it's working correctly!
     ----------------------------------------------------
 
     Go/
     ----------------------------------------------------
-    It ran 9551 passes in 5.000390 seconds.
-    Performance: 1910.050825 passes/sec
+    It ran 9644 passes in 5.000097 seconds.
+    Performance: 1928.762662 passes/sec
+    And, it's working correctly!
     ----------------------------------------------------
 
     Java/
     ----------------------------------------------------
-    It ran 6658 passes in 5.000129 seconds.
-    Performance: 1331.5656456063432 passes/sec
+    It ran 5980 passes in 5.001 seconds.
+    Performance: 1195.760847830434 passes/sec
+    And, it's working correctly!
     ----------------------------------------------------
 
     MATLAB/
     ----------------------------------------------------
     It ran 8159 passes in 5.0005 seconds.
-    SUCCESS!!!
+    Performance: 1631.64 passes/sec
+    And, it's working correctly!
     ----------------------------------------------------
 
     PHP/
     ----------------------------------------------------
-    It ran 190 passes in 5.0190789699554 seconds.
-    Performance: 37.855551015904 passes/sec
+    It ran 296 passes in 5.0116150379181 seconds.
+    Performance: 59.062796675413 passes/sec
+    And, it's working correctly!
     ----------------------------------------------------
 
     Python/
     ----------------------------------------------------
-    It ran 9121 passes in 5.000078 seconds.
-    Performance: 1824.1715429239302 passes/sec
+    It ran 9316 passes in 5.000342 seconds.
+    Performance: 1863.0725658364968 passes/sec
     And, it's working correctly!!!
     ----------------------------------------------------
 
     Rust/
     ----------------------------------------------------
-    It ran 8503 passes in 5.000387 seconds.
-    Performance: 1700.468383747098 passes/sec
+    It ran 15624 passes in 5.000176834 seconds.
+    Performance: 3124.6894897317543 passes/sec
+    And, it's working correctly!
     ----------------------------------------------------

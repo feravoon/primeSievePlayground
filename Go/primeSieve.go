@@ -9,22 +9,22 @@ import (
 func main() {
 	sieveSize := 1000000
 
-	start := time.Now()
-	end := time.Now()
-	var dur time.Duration
 	passes := 0
-	isPrime := make([]uint8, sieveSize+1)
+	isPrime := make([]byte, sieveSize+1)
 	var timeLimit float64 = 5.0
-	for true {
-		isPrime = make([]uint8, sieveSize+1)
 
-		for i := 1; i <= sieveSize; i += 2 {
-			isPrime[i] = 1
+	var dur time.Duration
+	var end time.Time
+	var start time.Time = time.Now()
+
+	for true {
+		for i := 0; i < sieveSize; i += 2 {
+			isPrime[i] = 0
+			isPrime[i+1] = 1
 		}
 
 		var currNum int
 
-		isPrime[0] = 0
 		isPrime[1] = 0
 		isPrime[2] = 1
 

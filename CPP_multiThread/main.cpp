@@ -9,14 +9,17 @@
 void runSieve(int &passes, float &runtime)
 {
     using namespace std::chrono;
+
+    passes = 0;
+    runtime = 0.0f;
+    
     const unsigned int sieveSize = 1000000;
-
-    system_clock::time_point start = system_clock::now();
-    system_clock::time_point end = system_clock::now();
-    duration<double> elapsed_seconds;
-    float timeLimit = 5.0f;
-
     bitArray<unsigned char> isPrime(sieveSize);
+
+    float timeLimit = 5.0f;
+    duration<double> elapsed_seconds;
+    system_clock::time_point end;
+    system_clock::time_point start = system_clock::now();
 
     while(true)
     {
@@ -24,20 +27,19 @@ void runSieve(int &passes, float &runtime)
         
         int currNum;
 
-        isPrime.clearBit(0); // Zero is not a prime
         isPrime.clearBit(1); // One is not a prime
         isPrime.setBit(2); // Two is a prime
 
-        int upperLimit = sqrt(sieveSize);
+        int upperLimit = (int)sqrt(sieveSize);
         for(int i=3; i<=upperLimit; i++)
         {
-            if(isPrime.getBit(i))
+            if(isPrime.getBit(i)==1)
             {
                 currNum = i*i;
                 while(currNum<=sieveSize)
                 {
                     isPrime.clearBit(currNum);
-                    currNum += 2*i;
+                    currNum += i+i;
                 }
             }
         }
@@ -78,7 +80,7 @@ std::ostream& bold_off(std::ostream& os)
 
 int main(int argc, char *argv[])
 { 
-    int N = 8; // Default number of threads
+    unsigned int N = 8; // Default number of threads
 
     // Input handling
     if(argc>1)

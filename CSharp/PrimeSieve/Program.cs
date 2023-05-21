@@ -7,7 +7,7 @@
         DateTime start = DateTime.Now;
         DateTime end;
         TimeSpan dur;
-        uint passes = 0;
+        int passes = 0;
         byte[] isPrime = new byte[sieveSize+1];
         float timeLimit = 5.0f;
         while(true)
@@ -20,7 +20,6 @@
                 
             int currNum;
 
-            isPrime[0] = 0;
             isPrime[1] = 0;
             isPrime[2] = 1;
             
@@ -33,7 +32,7 @@
                     while(currNum <= sieveSize)
                     {
                         isPrime[currNum] = 0;
-                        currNum += i+i;
+                        currNum += 2*i;
                     }
                 }
             }

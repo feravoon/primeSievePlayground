@@ -8,12 +8,17 @@ fn main() {
     let mut passes: usize = 0;
     let mut is_prime: [u8; SIEVE_SIZE+1] = [0; SIEVE_SIZE+1];
     let time_limit: f64 = 5.0;
-
+    let mut ind: usize;
     loop
-    {
-        let mut x: u8 = 1;
-        let alternate = || {x = x+1; x%2};   
-        is_prime.fill_with(alternate);
+    {   
+        // Reset the array    
+        ind = 0;
+        while ind<SIEVE_SIZE
+        {
+            is_prime[ind] = 0;
+            is_prime[ind+1] = 1;
+            ind += 2;
+        }
         
         is_prime[1] = 0;
         is_prime[2] = 1;

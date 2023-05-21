@@ -11,31 +11,33 @@ class PrimeSieve
         Instant end;
         Duration dur;
         int passes = 0;
-        byte[] isPrime = new byte[sieveSize+1];
+        boolean[] isPrime = new boolean[sieveSize+1];
         float timeLimit = 5.0f;
         while(true)
         {
-            for(int i=0;i<sieveSize;i+=2)
-            {
-                isPrime[i] = 0;
-                isPrime[i+1] = 1;
-            }
-            int currNum;
+            isPrime = new boolean[sieveSize+1];
+            for(int i=1;i<=sieveSize;i+=2)
+                isPrime[i] = true;
 
-            isPrime[0] = 0;
-            isPrime[1] = 0;
-            isPrime[2] = 1;
+            int k,currNum;
+
+            isPrime[1] = false;
+            isPrime[2] = true;
 
             int upperLimit = (int)Math.sqrt(sieveSize);
             for(int i=3; i<=upperLimit; i++)
             {
-                if(isPrime[i]==1)
+                if(isPrime[i])
                 {
-                    currNum = i*i;
-                    while(currNum <= sieveSize)
+                    k = i;
+                    while(true)
                     {
-                        isPrime[currNum] = 0;
-                        currNum+=2*i;
+                        currNum = i*k;
+                        if(currNum>sieveSize)
+                            break;
+
+                        isPrime[currNum] = false;
+                        k+=2;
                     }
                 }
             }
@@ -54,7 +56,8 @@ class PrimeSieve
 
         for (int i=0; i<=sieveSize; i++)
         {
-            primeCount += isPrime[i];
+            if(isPrime[i])
+                primeCount ++;
         }
         if(primeCount == 78498)
         {
