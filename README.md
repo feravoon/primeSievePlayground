@@ -11,7 +11,7 @@ These result are from my MacBook Air M2
 | C++ (8 threads) | 56948                 | 11388.33       |
 | C#              | 9965                  | 1992.89        |
 | Go              | 9644                  | 1928.76        |
-| Java            | 5980                  | 1195.76        |
+| Java            | 7357                  | 1471.25        |
 | MATLAB          | 8159                  | 1631.64        |
 | PHP             | 296                   | 59.06          |
 | Python          | 9316                  | 1863.07        |
@@ -47,8 +47,8 @@ These result are from my MacBook Air M2
 
     Java/
     ----------------------------------------------------
-    It ran 5980 passes in 5.001 seconds.
-    Performance: 1195.760847830434 passes/sec
+    It ran 7357 passes in 5.000525 seconds.
+    Performance: 1471.245519220482 passes/sec
     And, it's working correctly!
     ----------------------------------------------------
 
