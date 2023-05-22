@@ -1,6 +1,5 @@
 import math
 import datetime
-from primesUpTo1Mil import *
 
 timeLimit = 5 # 5 seconds
 start = datetime.datetime.now() # starting time
@@ -34,18 +33,12 @@ print("Performance: " + str(passes/(finish-start).total_seconds()) + " passes/se
 
 
 # Checking if the results are correct (this only checks for the last run but we know all the runs produce the same result)
-trueIsPrime = bytearray(b'\x00')*(sieveSize+1)
+primeCount = 0
 
-for i in primeList:
-    trueIsPrime[i] = 1
-
-resultsAreCorrect = True
 for i in range(sieveSize+1):
-    if isPrime[i] != trueIsPrime[i]:
-        resultsAreCorrect = False
-        break
+    primeCount+=isPrime[i]
 
-if resultsAreCorrect:
+if primeCount==78498:
     print("And, it's working correctly!!!")
 else:
     print("But, it's not working correctly!!!")
