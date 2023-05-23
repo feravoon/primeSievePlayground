@@ -1,5 +1,5 @@
 # primeSievePlayground
-I try prime sieve algorithms in different programming languages.  
+I implemented [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) in different programming languages.  
 (Inspired by [davepl](https://github.com/davepl)'s [Primes](https://github.com/PlummersSoftwareLLC/Primes) project. But the codes are neither in the style of nor compatible with it.)
 
 ## Results
