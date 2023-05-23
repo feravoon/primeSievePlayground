@@ -25,15 +25,17 @@ fn main() {
 
         let upper_limit: usize = (SIEVE_SIZE as f32).sqrt() as usize;
         let mut curr_num: usize;
+        let mut step: usize;
         for i in 3..upper_limit
         {
             if is_prime[i] == 1
             {
                 curr_num = i*i;
+                step = 2*i;
                 while curr_num <= SIEVE_SIZE
                 {  
                     is_prime[curr_num] = 0;
-                    curr_num += 2*i;
+                    curr_num += step;
                 }
             }
         }

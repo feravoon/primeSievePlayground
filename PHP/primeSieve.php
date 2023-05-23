@@ -11,7 +11,7 @@ while(true)
         $isPrime[$i] = 0;
         $isPrime[$i+1] = 1;
     }
-    $isPrime[0] = 0;
+
     $isPrime[1] = 0;
     $isPrime[2] = 1;
 
@@ -21,10 +21,11 @@ while(true)
         if($isPrime[$i])
         {
             $currNum = $i*$i;
+            $step = 2*$i;
             while($currNum <= $sieveSize)
             {
                 $isPrime[$currNum] = 0;
-                $currNum+=2*$i;
+                $currNum+=$step;
             }   
         }
     }

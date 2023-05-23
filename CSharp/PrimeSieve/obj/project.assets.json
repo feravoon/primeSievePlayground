@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/Users/ahmetcakiroglu/.nuget/packages/": {}
+    "/Users/ahmet/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmetcakiroglu/Codes/primeSievePlayground/CSharp/PrimeSieve/PrimeSieve.csproj",
+      "projectUniqueName": "/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/PrimeSieve.csproj",
       "projectName": "PrimeSieve",
-      "projectPath": "/Users/ahmetcakiroglu/Codes/primeSievePlayground/CSharp/PrimeSieve/PrimeSieve.csproj",
-      "packagesPath": "/Users/ahmetcakiroglu/.nuget/packages/",
-      "outputPath": "/Users/ahmetcakiroglu/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/",
+      "projectPath": "/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/PrimeSieve.csproj",
+      "packagesPath": "/Users/ahmet/.nuget/packages/",
+      "outputPath": "/Users/ahmet/Codes/primeSievePlayground/CSharp/PrimeSieve/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ahmetcakiroglu/.nuget/NuGet/NuGet.Config"
+        "/Users/ahmet/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

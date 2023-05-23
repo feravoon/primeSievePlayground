@@ -1,1 +1,1 @@
-/Users/ahmetcakiroglu/Codes/primeSievePlayground/Rust/primeSieve/target/release/primeSieve: /Users/ahmetcakiroglu/Codes/primeSievePlayground/Rust/primeSieve/src/main.rs
+/Users/ahmet/Codes/primeSievePlayground/Rust/primeSieve/target/release/primeSieve: /Users/ahmet/Codes/primeSievePlayground/Rust/primeSieve/src/main.rs

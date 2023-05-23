@@ -25,7 +25,7 @@ void runSieve(int &passes, float &runtime)
     {
         isPrime.reset();
         
-        int currNum;
+        int step, currNum;
 
         isPrime.clearBit(1); // One is not a prime
         isPrime.setBit(2); // Two is a prime
@@ -36,10 +36,11 @@ void runSieve(int &passes, float &runtime)
             if(isPrime.getBit(i)==1)
             {
                 currNum = i*i;
+                step = i+i;
                 while(currNum<=sieveSize)
                 {
                     isPrime.clearBit(currNum);
-                    currNum += i+i;
+                    currNum += step;
                 }
             }
         }

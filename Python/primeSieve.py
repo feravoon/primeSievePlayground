@@ -8,7 +8,7 @@ sieveSize = 1000000
 
 while True:
     
-    isPrime = bytearray(b'\x00\x01')*(int(sieveSize/2)+1) # filling the array with alternating 1's and 0's (eliminating even numbers)
+    isPrime = bytearray(b'\x00\x01')*(sieveSize//2+1) # filling the array with alternating 1's and 0's (eliminating even numbers)
 
     isPrime[1] = 0 # set 1 as not a prime
     isPrime[2] = 1 # set 2 as a prime

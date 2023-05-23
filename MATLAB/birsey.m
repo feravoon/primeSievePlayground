@@ -1,7 +1,6 @@
-
-sieveSize = int32(1000000);
+sieveSize = uint32(1000000);
 tic
-passes = int32(0);
+passes = uint32(0);
 while true
     isPrime = true([sieveSize,1]);
     isPrime(2:2:end) = false;
@@ -9,11 +8,11 @@ while true
     isPrime(1) = false;
     isPrime(2) = true;
     upperLimit = ceil(sqrt(double(sieveSize)));
-    for i=int32(3:upperLimit)
+    for i=uint32(3:upperLimit)
         if isPrime(i)
             currNum = i*i;
             step = i+i;
-            isPrime(currNum:step:sieveSize) = false;
+            isPrime(currNum:step:end) = false;
         end
     end
     passes = passes + 1;

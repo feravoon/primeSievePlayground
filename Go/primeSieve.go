@@ -24,7 +24,7 @@ func main() {
 		}
 
 		var currNum int
-
+		var step int
 		isPrime[1] = 0
 		isPrime[2] = 1
 
@@ -32,9 +32,10 @@ func main() {
 		for i := 3; i <= upperLimit; i++ {
 			if isPrime[i] == 1 {
 				currNum = i * i
+				step = i + i
 				for currNum <= sieveSize {
 					isPrime[currNum] = 0
-					currNum += i + i
+					currNum += step
 				}
 			}
 		}

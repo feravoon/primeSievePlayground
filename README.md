@@ -12,6 +12,7 @@ These result are from my MacBook Air M2
 | C#              | 9965                  | 1992.89        |
 | Go              | 9644                  | 1928.76        |
 | Java            | 7357                  | 1471.25        |
+| JavaScript      | 5296                  | 1058.99        |
 | MATLAB          | 8159                  | 1631.64        |
 | PHP             | 296                   | 59.06          |
 | Python          | 9316                  | 1863.07        |
@@ -49,6 +50,13 @@ These result are from my MacBook Air M2
     ----------------------------------------------------
     It ran 7357 passes in 5.000525 seconds.
     Performance: 1471.245519220482 passes/sec
+    And, it's working correctly!
+    ----------------------------------------------------
+
+    JavaScript/
+    ----------------------------------------------------
+    It ran 5296 passes in 5.001 seconds.
+    Performance: 1058.988202359528 passes/sec
     And, it's working correctly!
     ----------------------------------------------------
 

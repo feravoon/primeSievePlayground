@@ -18,7 +18,7 @@
                 isPrime[i+1] = 1;
             }
                 
-            int currNum;
+            int step,currNum;
 
             isPrime[1] = 0;
             isPrime[2] = 1;
@@ -29,10 +29,11 @@
                 if(isPrime[i]==1)
                 {
                     currNum = i*i;
+                    step = 2*i;
                     while(currNum <= sieveSize)
                     {
                         isPrime[currNum] = 0;
-                        currNum += 2*i;
+                        currNum += step;
                     }
                 }
             }

@@ -26,17 +26,18 @@ int main()
         isPrime[1] = 0;
         isPrime[2] = 1;
 
-        int currNum;
+        int step,currNum;
         int upperLimit = (int)sqrt(sieveSize);
         for(int i=3; i<=upperLimit; i++)
         {
             if(isPrime[i]==1)
             {
                 currNum = i*i;
+                step = i+i;
                 while(currNum <= sieveSize)
                 {
                     isPrime[currNum] = 0;
-                    currNum += i+i;
+                    currNum += step;
                 }
             }
         }
