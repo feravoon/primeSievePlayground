@@ -14,6 +14,7 @@ These result are from my MacBook Air M2
 | Java            | 7357                  | 1471.25        |
 | JavaScript      | 5296                  | 1058.99        |
 | MATLAB          | 8159                  | 1631.64        |
+| Perl            | 57                    | 11.34          |
 | PHP             | 296                   | 59.06          |
 | Python          | 9316                  | 1863.07        |
 | Rust            | 15624                 | 3124.69        |
@@ -64,6 +65,13 @@ These result are from my MacBook Air M2
     ----------------------------------------------------
     It ran 8159 passes in 5.0005 seconds.
     Performance: 1631.64 passes/sec
+    And, it's working correctly!
+    ----------------------------------------------------
+
+    Perl/
+    ----------------------------------------------------
+    It ran 57 passes in 5.02562594413757 seconds.
+    Performance: 11.3418707706432 passes/sec
     And, it's working correctly!
     ----------------------------------------------------
 
