@@ -1,2 +1,2 @@
-swiftc -O PrimeSieve.swift -o PrimeSieve
+swiftc -Ounchecked PrimeSieve.swift -o PrimeSieve
 ./PrimeSieve
