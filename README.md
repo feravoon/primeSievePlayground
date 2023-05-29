@@ -18,6 +18,7 @@ These result are from my MacBook Air M2
 | PHP             | 296                   | 59.06          |
 | Python          | 9316                  | 1863.07        |
 | Rust            | 15624                 | 3124.69        |
+| Swift           | 15976                 | 3195.15        |
 
     CPP/
     ----------------------------------------------------
@@ -93,5 +94,12 @@ These result are from my MacBook Air M2
     ----------------------------------------------------
     It ran 15624 passes in 5.000176834 seconds.
     Performance: 3124.6894897317543 passes/sec
+    And, it's working correctly!
+    ----------------------------------------------------
+
+    Swift/
+    ----------------------------------------------------
+    It ran 15976 passes in 5.000077375 seconds.
+    Performance: 3195.1505550451607 passes/sec
     And, it's working correctly!
     ----------------------------------------------------
