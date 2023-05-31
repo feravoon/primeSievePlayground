@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CsEErrRIEbAXy1c7LI9oB9GdlWXghZxvSHr9rGQkJo+Mz7FbKPWOG8OA26kKLjxPAf0GNSUNpbkQ3DkGdYRP3w==",
+  "success": true,
+  "projectFilePath": "/Users/ahmet/Codes/primeSievePlayground/FSharp/FSharp.fsproj",
+  "expectedPackageFiles": [
+    "/Users/ahmet/.nuget/packages/fsharp.core/7.0.200/fsharp.core.7.0.200.nupkg.sha512"
+  ],
+  "logs": []
+}
