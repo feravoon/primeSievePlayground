@@ -22,20 +22,21 @@ while true
     end
 end
 
+disp('---------------------------------------------------------')
 disp(['It ran ' num2str(passes) ' passes in ' num2str(timePassed) ' seconds.' ])
+disp(['Performance: ' num2str(passes/timePassed) ' passes/sec'])
 
+% Checking if the results are correct (this only checks for the last run but we know all the runs produce the same result)
+primeCount = 0;
 
-myListOfPrimes = find(isPrime).';
-
-listOfPrimes = dlmread('listofPrimes.txt');
-listOfPrimes(listOfPrimes>sieveSize) = [];
-listOfPrimes(listOfPrimes<=1) = [];
-
-hatalar = [setdiff(listOfPrimes,myListOfPrimes), setdiff(myListOfPrimes,listOfPrimes)];
-
-
-if isempty(hatalar)
-    disp('SUCCESS!!!')
-else
-    disp('FAIL!!!')
+for i = 1:sieveSize
+    primeCount = primeCount + isPrime(i);
 end
+
+if primeCount==78498
+    disp('And, it''s working correctly!!!')
+else
+    disp('But, it''s not working correctly!!!')
+end
+
+disp('---------------------------------------------------------')

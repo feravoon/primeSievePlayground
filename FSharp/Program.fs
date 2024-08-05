@@ -1,5 +1,5 @@
 ﻿let sieveSize: int = 1000000
-let mutable isPrime: uint8 array = Array.zeroCreate (sieveSize+1)
+let mutable isPrime: uint8 array = Array.init (sieveSize+1) (fun (x: int) -> uint8(x % 2))
 
 let mutable passes: int = 0
 let timeLimit: double = 5.0
@@ -9,9 +9,7 @@ let mutable finish: System.DateTime = start
 let mutable elapsed_seconds: float = 0.0
 
 while elapsed_seconds <= timeLimit do
-    isPrime <- Array.zeroCreate (sieveSize+1)
-    for i in 0..((sieveSize-1)/2) do
-        isPrime[2*i+1] <- uint8 1
+    isPrime <- Array.init (sieveSize+1) (fun (x: int) -> uint8(x % 2))
     
     isPrime[1] <- uint8 0 
     isPrime[2] <- uint8 1
