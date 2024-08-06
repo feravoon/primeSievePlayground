@@ -5,29 +5,45 @@ I implemented [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Era
 ## Results
 These result are from my MacBook Air M2
 
-| **Language**    | **Passes in ~5 sec.** | **Passes/Sec** |
-|-----------------|-----------------------|----------------|
-| C++             | 15428                 | 3085.54        |
-| C++ (8 threads) | 56948                 | 11388.33       |
-| C#              | 9965                  | 1992.89        |
-| Go              | 9644                  | 1928.76        |
-| Java            | 7357                  | 1471.25        |
-| JavaScript      | 5296                  | 1058.99        |
-| MATLAB          | 8159                  | 1631.64        |
-| Perl            | 57                    | 11.34          |
-| PHP             | 296                   | 59.06          |
-| Python          | 9316                  | 1863.07        |
-| Rust            | 15624                 | 3124.69        |
-| Swift           | 15976                 | 3195.15        |
+| **Language**                | **Passes in ~5 sec.** | **Passes/Sec** |
+|-----------------------------|-----------------------|----------------|
+| C++ (char array)            | 15428                 | 3085.54        |
+| C++ (bit array)             | 10387                 | 2077.24        |
+| C++ (8 threads, char array) | 67399                 | 13476.98       |
+| C++ (8 threads, bit array)  | 56948                 | 11388.33       |
+| C#                          | 9965                  | 1992.89        |
+| Go                          | 9644                  | 1928.76        |
+| Java                        | 7357                  | 1471.25        |
+| JavaScript                  | 5296                  | 1058.99        |
+| MATLAB                      | 8159                  | 1631.64        |
+| Perl                        | 57                    | 11.34          |
+| PHP                         | 296                   | 59.06          |
+| Python                      | 9316                  | 1863.07        |
+| Rust                        | 15624                 | 3124.69        |
+| Swift                       | 15976                 | 3195.15        |
 
-    CPP/
+    CPP_charArray/
     ----------------------------------------------------
     It ran 15428 passes in 5.0001 seconds.
     Performance: 3085.54 passes/sec
     And, it's working correctly!
     ----------------------------------------------------
 
-    CPP_multiThread/
+    CPP_bitArray/
+    ----------------------------------------------------
+    It ran 10387 passes in 5.00039 seconds.
+    Performance: 2077.24 passes/sec
+    And, it's working correctly!
+    ----------------------------------------------------
+
+    CPP_multiThread_heapCharArray/
+    ----------------------------------------------------
+    It ran 67399 passes in 5.000557 seconds.
+    Performance: 13476.98 passes/sec
+    And, it's working correctly!
+    ----------------------------------------------------
+
+    CPP_multiThread_bitArray/
     ----------------------------------------------------
     It ran 56948 passes in 5.000557 seconds.
     Performance: 11388.33 passes/sec

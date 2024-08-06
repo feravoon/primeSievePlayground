@@ -31,7 +31,7 @@ fn main() {
             if is_prime[i] == 1
             {
                 curr_num = i*i;
-                step = 2*i;
+                step = i+i;
                 while curr_num <= SIEVE_SIZE
                 {  
                     is_prime[curr_num] = 0;
